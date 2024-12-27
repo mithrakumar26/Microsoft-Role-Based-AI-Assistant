@@ -1,86 +1,75 @@
 # Microsoft Role-Based AI Assistant
 
-## Overview
-This project implements a Microsoft Role-Based AI Assistant that provides role-specific guidance and support for various Microsoft technologies and solutions. The application leverages Azure Cognitive Services such as Text Analytics, Blob Storage, and Speech Services, integrated into a Streamlit web app.
+## 📖 Overview
+The Microsoft Role-Based AI Assistant is a dynamic, role-specific assistant designed to enhance productivity and streamline workflows. It leverages Azure Cognitive Services for sentiment analysis, text-to-speech capabilities, and more, providing an interactive interface for users to access tailored guidance based on their professional roles.
 
-### Key Features:
-- Role-based assistance tailored to IT, HR, Sales, Marketing, and more.
-- Sentiment analysis and key phrase extraction using Azure Text Analytics.
-- Conversation logging to Azure Blob Storage.
-- Text-to-Speech (TTS) integration with Azure Speech Services.
-- Dynamic role selection with custom topics and resources.
+## 🌟 Key Features
+- **Role-Specific Assistance**: Supports roles like IT, HR, Marketing, Sales, and more.
+- **AI-Powered Analytics**: Includes sentiment analysis and key phrase extraction using Azure AI.
+- **Text-to-Speech**: Converts AI responses into audio for an engaging user experience.
+- **Conversation Logging**: Stores chat histories securely in Azure Blob Storage.
+- **User-Friendly UI**: Built with Streamlit for an intuitive, interactive interface.
 
-## Prerequisites
-Before running the application, ensure you have the following:
-1. Azure Cognitive Services keys for Text Analytics and Speech.
-2. Azure Storage Account credentials.
-3. Python 3.8+ installed.
-4. Dependencies from `requirements.txt` installed.
+## 🛠️ Prerequisites
+- Python 3.8 or higher.
+- An active Azure account with:
+  - Azure Cognitive Services (Text Analytics, Speech).
+  - Azure Blob Storage configured.
+- `pip` package manager for Python.
 
-## Installation
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/azure-role-assistant.git
-cd azure-role-assistant
-```
-2. Create a virtual environment and activate it:
-```bash
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+## ⚙️ Installation
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/yourusername/role-based-ai-assistant.git
+   cd role-based-ai-assistant
+   ```
+2. **Create a Virtual Environment**:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Unix/Mac
+   venv\Scripts\activate     # Windows
+   ```
+3. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-4. Configure Azure keys:
-Create an `.env` file in the root directory and populate it with your Azure credentials:
-```
-AZURE_TEXT_ANALYTICS_ENDPOINT=<your_endpoint>
-AZURE_TEXT_ANALYTICS_KEY=<your_key>
-AZURE_STORAGE_ACCOUNT_NAME=<your_storage_account_name>
-AZURE_STORAGE_ACCOUNT_KEY=<your_storage_account_key>
-AZURE_SPEECH_KEY=<your_speech_key>
-AZURE_SPEECH_REGION=<your_speech_region>
-```
+## 🚀 Running the Application
+1. Replace placeholders in the `AZURE_CONFIG` section of `app.py` with your Azure keys.
+2. Start the application:
+   ```bash
+   streamlit run app.py
+   ```
+3. Open your browser and go to `http://localhost:8501` to interact with the AI assistant.
 
-## Running the Application
-1. Start the Streamlit app:
-```bash
-streamlit run app.py
-```
-2. Access the application in your browser at `http://localhost:8501`.
+## 📘 Usage
+- Select your role from the dropdown menu.
+- Type your queries or requests into the chat interface.
+- Receive AI-driven responses tailored to your role.
+- Use the text-to-speech feature to listen to responses.
+- Access stored conversation logs for future reference.
 
-## Usage
-1. Select your role from the sidebar.
-2. Interact with the assistant by typing your queries.
-3. Enable Text-to-Speech (optional) to hear the assistant's responses.
-4. View role-specific training materials and allowed topics.
+## 🌐 Deployment
+To deploy the application:
+1. Host the app on a platform like **Azure App Service**, **Heroku**, or **AWS**.
+2. Ensure environment variables for Azure credentials are securely set.
+3. Configure a reverse proxy like Nginx for production use if needed.
 
-## Deployment
-To deploy the app, consider using Azure App Service or Docker. Update your environment variables as per the deployment environment.
+### Deployment with Azure App Service (Example):
+1. Install the Azure CLI and log in:
+   ```bash
+   az login
+   ```
+2. Deploy the app using the following commands:
+   ```bash
+   az webapp up --name your-app-name --resource-group your-resource-group --runtime PYTHON:3.9
+   ```
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-## Contributing
-Contributions are welcome! Please open an issue or submit a pull request for enhancements or bug fixes.
-
----
-### requirements.txt ###
-streamlit==1.24.1
-azure-cognitiveservices-speech==1.22.0
+## 📂 requirements.txt
+```plaintext
+azure-cognitiveservices-speech==1.24.0
+azure-core==1.29.2
 azure-ai-textanalytics==5.2.0
-azure-storage-blob==12.14.1
-pydantic==1.10.11
-
-### LICENSE ###
-MIT License
-
-Copyright (c) 2024 Your Name
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+azure-storage-blob==12.15.0
+streamlit==1.26.0
+pydantic==1.10.9
