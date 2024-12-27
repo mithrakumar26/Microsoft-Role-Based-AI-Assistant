@@ -1,0 +1,6 @@
+azure-cognitiveservices-speech==1.24.0
+azure-core==1.29.2
+azure-ai-textanalytics==5.2.0
+azure-storage-blob==12.15.0
+streamlit==1.26.0
+pydantic==1.10.9
